@@ -15,8 +15,9 @@ setopt hist_ignore_space
 setopt hist_verify
 setopt inc_append_history
 setopt share_history # share command history data
-SAVEHIST=100 # Save history to 100 commands.
+SAVEHIST=300 # Save history to x number of commands.
 HISTFILE=~/.zsh_history # Store history to persist across sessions.
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' # Case Insensitive Tab Completion.
 
 # Aliases
 alias composer="php /usr/local/bin/composer.phar"
