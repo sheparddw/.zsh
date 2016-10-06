@@ -1,4 +1,5 @@
 source $HOME/.zsh/antigen/antigen.zsh
+source $HOME/.zsh/.zshenv
 
 # Bundles
 antigen-bundle zsh-users/zsh-syntax-highlighting #Syntax Highlighting
@@ -7,7 +8,7 @@ antigen-bundle zsh-users/zsh-autosuggestions #History Searching
 antigen-bundle zsh-users/zsh-completions #More Completions
 
 # Options
-setopt append_history
+setopt append_history # Add, not replace history.
 setopt extended_history
 setopt hist_expire_dups_first
 setopt hist_ignore_dups # ignore duplication command history list
