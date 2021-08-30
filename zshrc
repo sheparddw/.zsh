@@ -3,11 +3,16 @@ source $HOME/.zsh/antigen/antigen.zsh
 source $HOME/.zsh/zshenv
 
 # Bundles
-antigen bundle zsh-users/zsh-syntax-highlighting #Syntax Highlighting
-antigen bundle zsh-users/zsh-history-substring-search #History Searching
-antigen bundle zsh-users/zsh-autosuggestions #History Searching
-antigen bundle zsh-users/zsh-completions #More Completions
+#Syntax Highlighting
+antigen bundle zsh-users/zsh-syntax-highlighting
+#History Searching
+antigen bundle zsh-users/zsh-history-substring-search
+#More Completions
+antigen bundle zsh-users/zsh-autosuggestions
+antigen bundle zsh-users/zsh-completions
 antigen apply
+
+bindkey '^f' autosuggest-accept
 
 # Options
 setopt append_history # Add, not replace history.
@@ -36,6 +41,10 @@ if _has fzf && _has ag; then
   '
 fi
 
+export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
+export PS1="%n %1d $ "
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
