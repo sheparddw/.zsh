@@ -12,7 +12,8 @@ antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-completions
 antigen apply
 
-bindkey '^f' autosuggest-accept
+#bindkey '^f' autosuggest-accept
+bindkey -e
 
 # Options
 setopt append_history # Add, not replace history.
